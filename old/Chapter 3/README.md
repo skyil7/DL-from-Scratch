@@ -16,11 +16,11 @@
 ### 시그모이드 함수
 다음은 신경망에서 자주 사용하는 활성화 함수인 시그모이드 함수(Sigmoid Function)이다.
 
-![img](./img/sigmoid.png)
+![img](img/sigmoid.png)
 
 ### 계단 함수와 시그모이드 함수 비교
-![img](./img/stepFunction.png)
-![img](./img/sigmoidFunction.png)
+![img](img/stepFunction.png)
+![img](img/sigmoidFunction.png)
 
 특정값에서 급작스럽게 값이 변하는 계단 함수와 달리, 시그모이드 함수는 그 이름대로 S자의 함수를 형성한다.
 
@@ -44,7 +44,7 @@
 시그모이드 함수외에도 최근 신경망에 자주 사용되는 함수로 ReLU 함수(Rectified Linier Unit)가 있다.
 
 ReLU함수는 0이하의 값은 0을 리턴하고, 이외의 값은 그대로 리턴하는 함수로 아래와 같다.
-![img](./img/ReLUFunction.png)
+![img](img/ReLUFunction.png)
 
 ## 넘파이의 다차원 배열
 다차원 배열 계산을 숙달하면 신경망을 효율적으로 개발할 수 있다.
@@ -54,7 +54,7 @@ ReLU함수는 0이하의 값은 0을 리턴하고, 이외의 값은 그대로 �
 ## 신경망에서의 행렬 곱
 다음 신경망을 행렬로 구현해보자.
 
-![img](./img/matrixnet.png)
+![img](img/matrixnet.png)
 
 X는 2, W는 2x3, Y는 3으로 행렬곱이 가능하다.
 
@@ -72,7 +72,7 @@ Y = np.dot(X,W)
 이제 넘파이를 통해 아래의 3층 신경망을 구현해보자.<p>
 이는 Multi-Layer_Neural_Network.py 에 구현하면서 설명했다.
 
-![example](./img/example.png)
+![example](img/example.png)
 
 텐서의 dot연산을 활용하여 위 순방향 신경망을 쉽게 구현할 수 있다.
 
@@ -86,7 +86,7 @@ def identityFunction(x):
 ~~~
 한편, 분류에서 사용하는 소프트맥스 함수는 다음 식을 가진다.
 
-![soft](./img/softmax.png)
+![soft](img/softmax.png)
 
 n은 출력층의 뉴런 수, y는 그 중 k번째 뉴런의 출력을 뜻한다.
 
@@ -103,7 +103,7 @@ def softmax(a):
 위 코드는 소프트맥스 함수를 잘 수행하지만, 지수 함수의 특성상 실제 환경에서 오버 플로우의 위험이 있다.
 이를 방지하기 위해 아래와 같이 소프트맥스 함수를 고쳐보자.
 
-![soft](./img/softmax_better.png)
+![soft](img/softmax_better.png)
 
 위 식은 소프트맥스 함수를 계산할 때, 어떤 정수를 더하거나 빼도 결과는 바뀌지 않는다는 것이다.
 오버플로를 막기 위해 위 지식을 활용하여, 소프트맥스 함수를 구할 때, 입력값 중 최댓값을 빼는 방법을 사용할 수 있다.
